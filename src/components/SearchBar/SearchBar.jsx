@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import css from './SearchBar.module.css';
+
+
 const SearchBar = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState('');
-
-
 
   const handleQuerySearch = e => {
     setSearchQuery(e.target.value.toLowerCase());

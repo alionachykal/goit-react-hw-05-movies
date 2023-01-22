@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import css from './Cast.module.css'
 import { fetchMoviesCredits } from 'services/MoviesAPI';
-import { toast } from "react-toastify";
+
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -19,7 +19,7 @@ const Cast = () => {
         const res = await fetchMoviesCredits(movieId);
         setCast(res);
       } catch (error) {
-        toast.warning('Ooops. Something went wrong...');
+        setError('Ooops. Something went wrong...');
       } finally {
         setLoading(false);
       }
